@@ -1,0 +1,65 @@
+// scrollbar styles for webkit browsers
+
+::-webkit-scrollbar {
+	// why set both properties width and height?
+
+	// width for y-axis scroll
+	width: 8px;
+	// height for x-axis scroll
+	height: 8px;
+}
+
+// those side buttons that you click
+// for smoothly navigate
+::-webkit-scrollbar-button {
+	width: 10px;
+	height: 10px;
+	aspect-ratio: 1;
+	background-color: #444;
+}
+
+// bar that you click and drag in order to scroll
+::-webkit-scrollbar-thumb {
+	background-color: #222;
+	border: 0px none transparent;
+	border-radius: 0px;
+
+	&:hover {
+		background-color: #333;
+	}
+
+	&:active {
+		background-color: #444;
+	}
+}
+
+// the entire bar
+::-webkit-scrollbar-track {
+	background: #111;
+	border: 0px none transparent;
+	border-radius: 0px;
+
+	&:hover {
+		background: #151515;
+	}
+
+	&:active {
+		background: #191919;
+	}
+}
+
+// while intersecting both, x and y
+// axis there is a little square at
+// the corner, you can set the color
+// of that with this property
+::-webkit-scrollbar-corner {
+	background: #666;
+}
+
+// scrollbar styles for firefox
+html {
+	$thumb: #222;
+	$track: #111;
+	scrollbar-color: $thumb $track;
+	scrollbar-width: thin;
+}
