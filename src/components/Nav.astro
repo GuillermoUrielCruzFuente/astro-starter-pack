@@ -24,8 +24,8 @@ const { title, pages } = Astro.props;
 	const menuToggler = toggler(false);
 
 	const setScrollbarVisibility = (isVisible: boolean) => {
-		const html = document.querySelector("html");
-		html!.style.overflow = isVisible ? "hidden scroll" : "hidden hidden";
+		const html = document.querySelector(".content") as HTMLDivElement;
+		html.style.overflow = isVisible ? "auto" : "hidden";
 	};
 
 	const responsiveMenuButton = document.querySelector(".ham-menu");
