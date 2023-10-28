@@ -1,0 +1,24 @@
+---
+import Card from "./Card.astro";
+import type { Props as CardProps } from "./Card.astro";
+
+type Props = {
+	maxWidth: string;
+	cardGap: string;
+	cardsData: CardProps[];
+};
+
+const { maxWidth, cardsData, cardGap } = Astro.props;
+---
+
+<section class="card-grid">
+	{cardsData.map((card) => <Card {...card} />)}
+</section>
+
+<style scoped define:vars={{ maxWidth, cardGap }}>
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(var(--maxWidth), 1fr));
+		gap: var(--cardGap);
+	}
+</style>
